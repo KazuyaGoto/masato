@@ -1,0 +1,19 @@
+<%= form_for @tweet do |f| %>
+  <div class="field">
+    <%= f.label :教材名 %>
+    <%= f.text_field :kyozai, :size => 140 %>
+  </div>
+  <div class="field">
+    <%= f.label :教材全体のページ数 %>
+    <%= f.number_field :page, :size => 140 %>
+    <%= f.select :syou, [["章", "章"], ["ページ", "ページ"]], include_blank: "選択して下さい" %>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.label :ノルマのページ　or　章は %>
+    <%= f.number_field :noruma_page, :size => 140 %>
+    <%= f.select :noruma_syou, [["章", "章"], ["ページ", "ページ"]], include_blank: "選択して下さい" %>
+  </div>
+  <%= f.submit "Tweetする" %>
+<% end %>
+<%= link_to "Tweet一覧に戻る", root_path %>
